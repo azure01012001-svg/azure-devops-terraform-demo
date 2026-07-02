@@ -16,6 +16,7 @@ steps:
     azureSubscription: 'bala'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
+    workingDirectory: '$(Build.SourcesDirectory)'
     inlineScript: |
       terraform init
 
@@ -25,6 +26,7 @@ steps:
     azureSubscription: 'bala'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
+    workingDirectory: '$(Build.SourcesDirectory)'
     inlineScript: |
       terraform validate
 
@@ -34,6 +36,7 @@ steps:
     azureSubscription: 'bala'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
+    workingDirectory: '$(Build.SourcesDirectory)'
     inlineScript: |
       terraform plan
 
@@ -43,5 +46,6 @@ steps:
     azureSubscription: 'bala'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
+    workingDirectory: '$(Build.SourcesDirectory)'
     inlineScript: |
       terraform apply -auto-approve
