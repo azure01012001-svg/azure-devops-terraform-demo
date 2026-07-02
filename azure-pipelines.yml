@@ -10,14 +10,38 @@ steps:
   inputs:
     terraformVersion: 'latest'
 
-- script: terraform init
+- task: AzureCLI@2
   displayName: 'Terraform Init'
+  inputs:
+    azureSubscription: 'bala'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      terraform init
 
-- script: terraform validate
+- task: AzureCLI@2
   displayName: 'Terraform Validate'
+  inputs:
+    azureSubscription: 'bala'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      terraform validate
 
-- script: terraform plan
+- task: AzureCLI@2
   displayName: 'Terraform Plan'
+  inputs:
+    azureSubscription: 'bala'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      terraform plan
 
-- script: terraform apply -auto-approve
+- task: AzureCLI@2
   displayName: 'Terraform Apply'
+  inputs:
+    azureSubscription: 'bala'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      terraform apply -auto-approve
